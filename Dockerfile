@@ -1,6 +1,5 @@
-FROM quay.io/Mudiyanmass/lisamwol:latest
-RUN git clone https://github.com/mudiyanmas/LISAMWOL-MD /root/bot/
-WORKDIR /root/bot/
-RUN yarn install --network-concurrency 1
-RUN yarn global add pm2@6.0.5
-CMD ["pm2-runtime", "ecosystem.config.js"]
+FROM quay.io/mudiyanmass/md:beta
+RUN git clone https://github.com/mudiyanmas/LISAMWOL-MD /root/mudiyanmass/
+WORKDIR /root/mudiyanmass/
+RUN yarn install
+CMD ["npm", "start"]
